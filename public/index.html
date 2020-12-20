@@ -1,56 +1,158 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/styles/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/styles/style.css" />
     <title>HiTalent</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <nav>
-            <div class="logo-container">
-                <img src="assets/img/logo.png" alt="hitalent logo" class="logo">
-            </div>
-            <ul class="nav-list">
-                <!-- ADD ITEMS HERE -->
-                <li class="nav-list__item"><a href="#" class="nav-list__item__link">Cursos</a></li>
-                <li class="nav-list__item"><a href="#" class="nav-list__item__link">Membresías</a></li>
-                <li class="nav-list__item"><a href="#" class="nav-list__item__link">Comunidad</a></li>
-                <li class="nav-list__item"><a href="#" class="nav-list__item__link">Propósito</a></li>
-            </ul>
-        </nav>
-        <section class="hero">
-            <div class="hero__left">
-                <h1>Te presentamos a la nueva comunidad de <span class="text-blue">educación artística online</span></h1>
-                <div class="hero-buttons">
-                    <a href="#" class="btn bg-green">Encuentra tu curso</a>
-                    <a href="#" class="btn bg-blue">Regístrate</a>
-                </div>
-            </div>
-            <div class="hero__right">
-                <div class="banner">
-                    <img src="assets/img/banner1.png">
-                </div>
-                <div class="hero-shape bg-green"></div>
-                <div class="hero-shape bg-blue"></div>
-            </div>
-        </section>
+      <nav class="content-centered">
+        <div class="logo-container">
+          <img src="assets/img/logo.png" alt="hitalent logo" class="logo" />
+        </div>
+        <!-- <ul class="nav-list"> -->
+        <!-- ADD ITEMS HERE -->
+        <!-- <li class="nav-list__item"><a href="#" class="nav-list__item__link">Cursos</a></li> -->
+        <!-- </ul> -->
+      </nav>
+      <section class="hero">
+        <div class="hero__left">
+          <h1>
+            Te presentamos a la nueva comunidad de
+            <span class="text-blue">educación artística online</span>
+          </h1>
+          <div class="hero-buttons">
+            <button class="btn bg-green signup-button">Regístrate</button>
+            <!-- <a href="#" class="btn bg-green">Encuentra tu curso</a> -->
+          </div>
+        </div>
+        <div class="hero__right">
+          <div class="banner">
+            <img src="assets/img/banner1.png" />
+          </div>
+          <div class="hero-shape bg-green shape-green"></div>
+          <div class="hero-shape bg-blue shape-blue"></div>
+        </div>
+      </section>
     </header>
     <main>
-        <section class="message">
-            <h2>🚧 Estamos construyendo esta sección 🚧</h2>
-            <p>¿Tienes alguna consulta o sugerencia? <a href="mailto:comunidad@hitalentcourses.com">comunidad@hitalentcourses.com</a></p>
-        </section>
+      <section class="header-message text-blue">
+        <h1>
+          Te presentamos a la nueva comunidad de
+          educación artística online
+        </h1>
+        <button class="btn bg-green signup-button">Regístrate</button>
+      </section>
+      <section class="message">
+        <h2>🚧 Estamos construyendo esta sección 🚧</h2>
+        <p>Pronto tendremos más novedades para ti. ¡Espéranos!</p>
+      </section>
     </main>
+    <footer>
+      <sub
+        >¿Tienes alguna consulta o sugerencia?
+        <a href="mailto:hola@hitalentcourses.com"
+          >hola@hitalentcourses.com</a
+        ></sub
+      >
+      <sub>&copy; 2020 hitalentcourses.com</sub>
+    </footer>
     <div id="signup-modal">
-        <div class="signup-modal__body">
-            <form>
-                <section>
-                    <input type="text" name="name" placeholder="Escriba su nombre">
-                </section>
-            </form>
-        </div>
+      <div class="signup-modal__body">
+        <form id="signup-form">
+          <section class="field-section">
+            <label for="name">
+              Nombre
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="John"
+                required
+              />
+            </label>
+          </section>
+          <section class="field-section">
+            <label for="surname">
+              Apellidos
+              <input
+                type="text"
+                id="surname"
+                name="surname"
+                placeholder="Doe"
+                required
+              />
+            </label>
+          </section>
+          <section class="field-section">
+            <label for="email">
+              Email
+              <input
+                type="text"
+                id="email"
+                name="email"
+                placeholder="john@doe.com"
+                required
+              />
+            </label>
+          </section>
+          <section class="field-section">
+            <label for="phone">
+              Teléfono
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="123456789"
+                pattern="[0-9]{9}"
+                required
+              />
+            </label>
+          </section>
+          <section class="field-section">
+            <label for="gender">
+              Género
+              <select
+                type="text"
+                id="gender"
+                name="gender"
+                required
+              >
+              <option disabled selected>Seleccione...</option>
+              <option value="M">Femenino</option>
+              <option value="M">Masculino</option>
+              <option value="No me identifico con estas opciones">No me identifico con estas opciones</option>
+              <option value="Prefiero no decirlo">Prefiero no decirlo</option>
+              </select>
+            </label>
+          </section>
+          <section class="field-section">
+            <label for="birthday">
+              Tu cumpleaños (para enviarte una sorpresa 🥳)
+              <input
+                type="date"
+                id="brithday"
+                name="birthday"
+              />
+            </label>
+          </section>
+          <section class="form-footer">
+            <section class="field-section">
+                <button class="btn bg-blue full-w" data-submit-btn>Completar registro</button>
+            </section>
+            <section class="field-section">
+                <button type="button" id="close-modal-btn" class="btn full-w">Cancelar</button>
+            </section>
+        </section>
+        </form>
+      </div>
     </div>
-</body>
+    <div id="success-message">
+        <h2>¡Genial! 🎉</h2>
+        <p>Te hemos enviado un correo con los datos para acceder al material.</p>
+    </div>
+    <script src="assets/js/app.js"></script>
+  </body>
 </html>

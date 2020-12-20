@@ -2,6 +2,7 @@ const express = require("express");
 const jwt = require("jsonwebtoken");
 const User = require("../models/user");
 const router = express.Router();
+const { sendEmail } = require('../utils');
 
 const requestData = {
   params: null,
@@ -38,7 +39,7 @@ router.use((req, res, next) => {
 
 router.post('/', (req, res) => {
   const { params } = requestData;
-
+  const fullUrl = req.protocol + '://' + req.get('host');
   const token = jwt.sign({ email: params.email }, process.env.JWT_SECRET);
 
   User.create({
@@ -46,11 +47,13 @@ router.post('/', (req, res) => {
     token,
   })
     .then((newUser) => {
-      res.status(201).send({ ok: true, newUser });
+      sendEmail(newUser, fullUrl).catch(console.error);
+      res.status(201).json({ ok: true, newUser: { name: newUser.name, email: newUser.email } });
     })
     .catch((error) => {
       console.error(error);
-      res.send({
+
+      res.status(500).json({
         ok: false,
         code: 500,
         error: "Something happened while creating User",
@@ -60,7 +63,8 @@ router.post('/', (req, res) => {
 });
 
 router.post('/validate', (req, res) => {
+  res.json({ok: true, ...req.body})
+});
 
-})
 
 module.exports = router;

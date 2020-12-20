@@ -6,7 +6,7 @@ const userSchema = new Schema({
     surname: { type: String, required: true },
     email: { type: String, required: true, unique: [true, 'Email taken'] },
     phone: { type: String, required: true, unique: [true, 'Phone taken'] },
-    gender: { type: String, enum: ['Masculino', 'Femenino', 'Otro', 'Prefiero no decirlo'] },
+    gender: { type: String, enum: ['M', 'F', 'No me identifico con estas opciones', 'Prefiero no decirlo'] },
     birthday: { type: Date, required: false },
     token: String,
 });
